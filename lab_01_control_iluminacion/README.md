@@ -27,6 +27,8 @@ Para desarrollar este laboratorio seguiremos cada una de las tareas de forma sec
 
 ### 1. Subir el código **Arduino**
 
-Empecemos subiendo el código **Arduino** a la maqueta. Este código basicamente lee la información del sensor y la envia por puerto serial al computador, esta información esta codificada en código `ASCII`. Adicionalmente si uno envia un valor (`0-255`) por el puerto serial al **Arduino**, este cambiará la intensidad del LED proporcionalmente a este valor. Para entender mejor el programa veamos el código `_control_iluminacion`.
+Empecemos subiendo el código **Arduino** a la maqueta. Este código basicamente lee la información del sensor y la envia por puerto serial al computador, esta información esta codificada en código `ASCII`. Adicionalmente si uno envia un valor (`0-255`) por el puerto serial al **Arduino**, este cambiará la intensidad del LED proporcionalmente a este valor. Para entender mejor el programa veamos el código `_control_iluminacion`. 
+
+> Una vez subido el código al **Arduino** se puede verificar via el Monitor Serie la recepción de caracteres `ASCII`, enviando cualquier caracter, el caracter recibido debería cambiar.
 
 ### 2. Toma de datos
