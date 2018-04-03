@@ -4,6 +4,8 @@
 
 En este laboratorio se desarrollará el modelo experimental y el control de un sistema de iluminación.
 
+> Los archivos para la practica pueden ser encontrados en [github](https://github.com/davinsony/control-mecatronico/tree/master/lab_01_control_iluminacion)
+
 ### Tareas
 
 Para cumplir el objetivo del laboratorio se necesita realizar las siguientes tareas.
@@ -19,7 +21,7 @@ Para cumplir el objetivo del laboratorio se necesita realizar las siguientes tar
 
 La planta es un sistema de iluminación con un LED de potencia (actuador) y un LDR (_Light Dependent Resistor_, sensor). Este sistema es controlado a traves de un **Arduino**. A continuación se presenta una imagen del sistema:
 
-![maqueta](lab_01_planta.jpeg "Maqueta de laboratio para el control de iluminación.")
+![maqueta](lab_01_img_planta.jpeg "Maqueta de laboratio para el control de iluminación.")
 
 ## Ejecución
 
@@ -27,8 +29,21 @@ Para desarrollar este laboratorio seguiremos cada una de las tareas de forma sec
 
 ### 1. Subir el código **Arduino**
 
-Empecemos subiendo el código **Arduino** a la maqueta. Este código basicamente lee la información del sensor y la envia por puerto serial al computador, esta información esta codificada en código `ASCII`. Adicionalmente si uno envia un valor (`0-255`) por el puerto serial al **Arduino**, este cambiará la intensidad del LED proporcionalmente a este valor. Para entender mejor el programa veamos el código `_control_iluminacion`. 
+*[IDE]: Integrated Development Environment
+
+Abramos el archivo `_control_iluminacion` en el **Arduino IDE**
+Empecemos subiendo el código **Arduino** a la maqueta. Para esto usaremos el .
+
+El programa que debemos abrir es el 
+
+Este código basicamente lee la información del sensor y la envia por puerto serial al computador, esta información esta codificada en código `ASCII`. Adicionalmente si uno envia un valor (`0-255`) por el puerto serial al **Arduino**, este cambiará la intensidad del LED proporcionalmente a este valor.  
 
 > Una vez subido el código al **Arduino** se puede verificar via el Monitor Serie la recepción de caracteres `ASCII`, enviando cualquier caracter, el caracter recibido debería cambiar.
 
 ### 2. Toma de datos
+
+Para la toma de datos usaremos el archivo `_simulink_lazo_abierto`. Este archivo debe ser configurado con el puerto de comunicación `COM_` en el cual aparece el **Arduino** conectado al computador. 
+
+Para verificar el puerto de comunicación serial, usaremos el **Arduino IDE**. En el menú `Herramientas` `>` ``Puerto`
+
+![puerto](lab_01_img_verificacion_puerto.png "Verificación del puerto utilizando el Arduino IDE")
