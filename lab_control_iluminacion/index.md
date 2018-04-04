@@ -4,18 +4,20 @@
 
 En este laboratorio se desarrollará el modelo experimental y el control de un sistema de iluminación.
 
-> Los archivos para la practica pueden ser encontrados en [github](https://github.com/davinsony/control-mecatronico/tree/master/lab_control_iluminacion/code)
+[la]: code/simulink_lazo_abierto.slx
+[lc]: code/simulink_lazo_cerrado.slx
+[ci]: code/control_iluminacion/control_iluminacion.ino
 
 ### Tareas
 
 Para cumplir el objetivo del laboratorio se necesita realizar las siguientes tareas.
 
-1. Subir el código **Arduino** `control_iluminacion` a la maqueta.
-2. Tomar los datos con ayuda del archivo `simulink_lazo_abierto`. 
+1. Subir el código **Arduino** [`control_iluminacion`][ci] a la maqueta.
+2. Tomar los datos con ayuda del archivo [`simulink_lazo_abierto`][la]. 
 3. Realizar un acondicionamiento de los datos tomados.
 4. Identificar la función de transferencia del sistema, utilizando la applicación de **Matlab** llamada _System Identification_.
 5. Encontrar los valores optimos para el controlador, utilizando la applicación de **Matlab** llamada _PID Tuner_.
-6. Verificar el correcto funcionamiento del control con ayuda del archivo `simulink_lazo_cerrado`.
+6. Verificar el correcto funcionamiento del control con ayuda del archivo [`simulink_lazo_cerrado`][lc].
 
 ## Descripción de la planta
 
@@ -35,7 +37,7 @@ Para desarrollar este laboratorio seguiremos cada una de las tareas de forma sec
 
 *[IDE]: Integrated Development Environment
 
-Abramos el archivo `control_iluminacion` en el **Arduino IDE**. Para ubicar el puerto de comunicación serial vamos al menú `Herramientas` `>` `Puerto`. Selecionamos el puerto donde se encuentre el **Arduino UNO**.
+Abramos el archivo [`control_iluminacion`][ci] en el **Arduino IDE**. Para ubicar el puerto de comunicación serial vamos al menú `Herramientas` `>` `Puerto`. Selecionamos el puerto donde se encuentre el **Arduino UNO**.
 
 ![selección del puerto](img/verificacion_puerto.png "Verificación del puerto utilizando el Arduino IDE")
 
@@ -51,7 +53,7 @@ Este código basicamente lee la información del sensor y la envia por puerto se
 
 ### 2. Toma de Datos
 
-Para la toma de datos usaremos el archivo `simulink_lazo_abierto`. Este archivo debe ser configurado con el puerto de comunicación `COM-` en el cual aparece el **Arduino UNO** conectado al computador. Normalmente es el mismo puerto que usamos en el paso anterior.
+Para la toma de datos usaremos el archivo [`simulink_lazo_abierto`][la]. Este archivo debe ser configurado con el puerto de comunicación `COM-` en el cual aparece el **Arduino UNO** conectado al computador. Normalmente es el mismo puerto que usamos en el paso anterior.
 
 Una vez abierto el archivo en **simulink**, haremos doble-clic en planta para acceder a los bloques internos. Como se ve en la figura, hay tres bloques que deben ser configurados de acuerdo al puerto serial del **Arduino**.
 
