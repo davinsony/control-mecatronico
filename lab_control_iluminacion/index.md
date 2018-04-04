@@ -1,8 +1,8 @@
-# Laboratorio del Control de Iluminación de un Sistema Realimentado
+# Laboratorio del Control de Iluminación
 
 ## Objetivo General
 
-En este laboratorio se desarrollará el modelo experimental y el control de un sistema de iluminación.
+En este laboratorio se desarrollará el modelo experimental y el control en lazo cerrado de un sistema de iluminación.
 
 [la]: code/simulink_lazo_abierto.slx
 [lc]: code/simulink_lazo_cerrado.slx
@@ -108,3 +108,27 @@ Cuando tengamos un modelo satisfactorio. Podemos arrastrar el modelo al _workspa
 ![to workspace](img/sys_id_window_to_workspace.png "Exportación del modelo al workspace")
 
 ### 5. Diseño del Controlador
+
+Para el controlador se usará la aplicación de **Matlab**: _PID Tuner_.
+
+![ventana pid tuner](img/pid_tuner_window.png "Ventana de la aplicación PID Tuner")
+
+Lo primero que se debe hacer en esta ventana es importar el modelo del la planta. Para esto iremos al menú desplegable `Plant` `>` `Import`. Aquí seleccionaremos la variable del workspace del modelo. 
+
+Esta aplicación ofrece diferentes tipos de controladores. Para esta práctica usaremos un _PID_. En el menú desplegable `Type` selecionemos `PID`.
+
+![ventana pid tuner con control](img/pid_tuner_control.png "Ventana de la aplicación PID Tuner mostrando un control minimo")
+
+Cambiando el tiempo de respuesta (_response time_) podemos ajustar el comportamiento del sistema realimentado. En la figura anterior podemos ver en la esquina inferior derecha los coeficientes de los parametros del `PID`. En este ejemplo no se tiene un valor para el coefficiente `Kd`.
+
+Estos coefficientes serán usados para hacer el control en lazo cerrado. 
+
+### 6. Verificación del Control en Lazo Cerrado
+
+Para la verificación del control en el sistema real usaremos el archivo [`simulink_lazo_cerrado`][lc]. Al igual que en la toma de datos se debe configurar el puerto de comunicación de la planta. Para acceder a estos bloques, se hace doble-clic en el bloque planta.
+
+![diagrama de bloque de la planta](img/simulink_planta.png "Zoom en el bloque planta del archivo en Simulink") 
+
+Si los parametros del controlador _PID_ no son correctos se pueden obtener comportamientos inestables.
+
+![sistema inestable](img/simulink_scope_inestable.png)
